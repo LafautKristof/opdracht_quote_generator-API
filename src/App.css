@@ -1,0 +1,110 @@
+@import url("./reset.css");
+@import url("./icons.css");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap");
+
+:root {
+    font-size: 62.5%;
+    --green: rgb(83, 255, 171);
+    --grey: rgb(206, 226, 233);
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Lexend Deca", san-serif;
+    font-weight: 700;
+    background-color: rgb(32, 38, 50);
+    height: 100vh;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    margin: 2rem;
+
+    .card {
+        background-color: rgb(49, 59, 71);
+        border-radius: 1rem;
+        width: 50rem; /* Vaste breedte */
+        height: 30rem; /* Vaste hoogte */
+
+        margin: auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        padding: 6rem;
+        position: relative;
+
+        .header {
+            overflow: hidden;
+            padding-bottom: 3rem;
+            border-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: rgba(128, 128, 128, 0.212);
+            h1 {
+                color: var(--green);
+                font-size: 1.5rem;
+            }
+            p:first-of-type {
+                color: var(--grey);
+                font-size: 2rem;
+                margin: 2rem 0;
+            }
+            p:nth-of-type(2) {
+                color: var(--green);
+                font-size: 1.5rem;
+                font-style: italic;
+            }
+        }
+
+        .newQuote,
+        .saveQuote {
+            background-color: var(--green);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: absolute;
+            bottom: calc(0% - 3.2rem);
+            .submit {
+                background-color: var(--green);
+                border: none;
+                cursor: pointer;
+                height: 6.4rem;
+                width: 6.4rem;
+                border-radius: 50%;
+            }
+        }
+        .newQuote {
+            right: calc(50% + 3.2rem);
+            .icon-dice {
+                font-size: 2rem;
+                color: black;
+            }
+        }
+        .saveQuote {
+            left: calc(50% + 3.2rem);
+            .icon-attachment {
+                font-size: 2rem;
+                color: black;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        .card {
+            width: 90%;
+            .header {
+                p:first-of-type {
+                    font-size: 1.6rem;
+                }
+                p:nth-of-type(2) {
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+}
